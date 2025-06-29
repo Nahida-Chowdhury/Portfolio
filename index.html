@@ -503,7 +503,7 @@
             </div>
 
             <div class="text-center mt-12">
-                <a href="#"
+                <a href="https://github.com/Nahida-Chowdhury?tab=repositories"
                     class="inline-flex items-center px-6 py-3 border border-yellow-500 text-yellow-500 rounded-full font-medium hover:bg-yellow-500 hover:text-white transition">
                     View All Projects
                     <i class="fas fa-arrow-right ml-2"></i>
@@ -621,6 +621,13 @@
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top"
+        class="hidden fixed bottom-6 right-6 w-12 h-12 bg-yellow-500 text-white rounded-full shadow-lg z-50 items-center justify-center">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
     <!-- Scripts -->
     <script>
 
@@ -695,7 +702,28 @@
                 }
             });
         });
+
+
+        // Script for scroll behavior 
+
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.classList.remove("hidden");
+                scrollToTopBtn.classList.add("flex");
+            } else {
+                scrollToTopBtn.classList.add("hidden");
+                scrollToTopBtn.classList.remove("flex");
+            }
+        });
+
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
     </script>
 </body>
-
 </html>
